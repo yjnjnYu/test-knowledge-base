@@ -1,0 +1,70 @@
+site_name: 我的测试知识库
+site_url: https://github.com/yjnjnYu/test-knowledge-base
+site_author: JiangnanYu
+site_description: 测试工程师知识沉淀与分享平台
+
+# 启用Material主题（中文界面+测试优化）
+theme:
+  name: material
+  language: zh
+  palette:
+    primary: blue  # 主题色：red/pink/purple/indigo/green/teal/orange
+    accent: indigo
+  features:
+    - navigation.tabs  # 顶部标签页导航
+    - navigation.top  # 回到顶部按钮
+    - search.suggest  # 搜索建议
+    - search.highlight  # 搜索结果高亮
+    - content.code.copy  # 代码块一键复制
+    - content.code.annotate  # 代码注释
+    - toc.follow  # 目录跟随滚动
+
+# 启用所有测试必备插件
+plugins:
+  - search:
+      lang: zh  # 中文搜索支持
+  - mermaid2  # 流程图/时序图支持
+  - git-revision-date-localized:
+      type: timeago  # 显示"3天前更新"
+      enable_creation_date: true
+  - glightbox  # 图片点击放大
+
+# Markdown扩展（测试用例表格优化）
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.details  # 折叠面板
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed  # 标签页
+  - pymdownx.tasklist:  # 任务列表
+      custom_checkbox: true
+
+# 导航菜单（自动对应docs文件夹结构）
+nav:
+  - 首页: index.md
+  - 测试基础:
+    - 测试理论: 测试基础/测试理论.md
+    - 测试流程: 测试基础/测试流程.md
+  - 功能测试:
+    - 测试用例编写: 功能测试/测试用例编写.md
+    - 缺陷报告规范: 功能测试/缺陷报告规范.md
+  - 接口测试:
+    - Postman技巧: 接口测试/Postman技巧.md
+    - JMeter基础: 接口测试/JMeter基础.md
+  - 自动化测试:
+    - Python自动化: 自动化测试/Python自动化入门.md
+    - Selenium实战: 自动化测试/Selenium常用操作.md
+  - 性能测试:
+    - 性能测试基础: 性能测试/性能测试基础.md
+  - 缺陷复盘:
+    - 经典缺陷案例: 缺陷复盘/经典缺陷案例.md
+  - 工具使用:
+    - Git常用命令: 工具使用/Git常用命令.md
+  - 面试经验:
+    - 高频面试题: 面试经验/高频面试题.md
+
